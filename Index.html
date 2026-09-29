@@ -91,6 +91,31 @@
         box-shadow: 0 1.5vw 4vw rgba(60, 40, 20, 0.35);
       }
     }
+
+    /* Celulares: foto vertical del muro con el retrato (1294 × 2800)
+       cubriendo la pantalla; logo y contacto ubicados como en la
+       referencia "Página Web Vial vertical". */
+    @media (max-aspect-ratio: 3/5) {
+      html, body { height: 100%; }
+      body { overflow: hidden; }
+      .lienzo {
+        position: fixed;
+        display: block;
+        padding: 0;
+        min-height: 0;
+        left: 50%; top: 50%;
+        width: max(100vw, 46.21vh);
+        width: max(100vw, 46.21dvh);
+        height: max(100vh, 216.41vw);
+        height: max(100dvh, 216.41vw);
+        transform: translate(-50%, -50%);
+        background: url("img/fondo-movil.jpg") center / cover no-repeat;
+      }
+      .retrato { display: none; }
+      .logo, .contacto { position: absolute; }
+      .logo { left: 15.99%; top: 14.93%; width: 67.96%; }
+      .contacto { left: 7.69%; top: 78.39%; width: 84.38%; }
+    }
   </style>
 </head>
 <body>
